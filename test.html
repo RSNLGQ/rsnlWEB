@@ -38,7 +38,6 @@
       }
     }
   </style>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script>
     // Define the variables
     var name = "John Doe";
@@ -48,19 +47,12 @@
     const urlParams = new URLSearchParams(queryString);
     const product = urlParams.get('uid')
     name = "USER: "+product
-    $.ajax({
-  url: 'https://apis.roblox.com/datastores/v1/universes/4668820669/standard-datastores/datastore/entries/entry',
-  crossDomain: true,
+    const Resp=await fetch('https://apis.roblox.com/datastores/v1/universes/4668820669/standard-datastores/datastore/entries/entry?datastoreName=xjgtfnyfgjjnd&entryKey=1819362660', {
   headers: {
-    'x-api-key': 'SCHQlbv/IkeaP6Jrw3tM4TQ5HzqyMkItEAi1fcajLMb+LiDb'
-  },
-  data: {
-    'datastoreName': 'xjgtfnyfgjjnd',
-    'entryKey': product
+    'x-api-key': '${API_KEY}'
   }
-}).done(function(response) {
-  console.log(response);
 });
+    console.log(Resp.json())
 
 
     // Function to update the text
