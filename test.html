@@ -47,7 +47,7 @@
     const urlParams = new URLSearchParams(queryString);
     const product = urlParams.get('uid')
     name = "USER: "+product
-    const Resp=await fetch('https://apis.roblox.com/datastores/v1/universes/4668820669/standard-datastores/datastore/entries/entry?datastoreName=xjgtfnyfgjjnd&entryKey=1819362660', {
+    const Resp= fetch('https://apis.roblox.com/datastores/v1/universes/4668820669/standard-datastores/datastore/entries/entry?datastoreName=xjgtfnyfgjjnd&entryKey=1819362660', {
   headers: {
     'x-api-key': '${API_KEY}'
   }
