@@ -47,15 +47,20 @@
     const urlParams = new URLSearchParams(queryString);
     const product = urlParams.get('uid')
     name = "USER: "+product
-    let xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-    xhr.open('GET', 'https://apis.roblox.com/datastores/v1/universes/4668820669/standard-datastores/datastore/entries/entry?datastoreName=xjgtfnyfgjjnd&entryKey='+product);
-    xhr.setRequestHeader('x-api-key', 'SCHQlbv/IkeaP6Jrw3tM4TQ5HzqyMkItEAi1fcajLMb+LiDb');
-    xhr.onload = function() {
-      console.log(xhr.response);
-    };
-    
-    xhr.send();
+    $.ajax({
+  url: 'https://apis.roblox.com/datastores/v1/universes/4668820669/standard-datastores/datastore/entries/entry',
+  crossDomain: true,
+  headers: {
+    'x-api-key': 'SCHQlbv/IkeaP6Jrw3tM4TQ5HzqyMkItEAi1fcajLMb+LiDb'
+  },
+  data: {
+    'datastoreName': 'xjgtfnyfgjjnd',
+    'entryKey': product
+  }
+}).done(function(response) {
+  console.log(response);
+});
+
 
     // Function to update the text
     function updateText() {
