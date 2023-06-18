@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PSZ Player Stats</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      animation: background-animation 5s infinite;
+    }
+    
+    h1 {
+      font-size: 36px;
+      color: white;
+      margin-bottom: 20px;
+    }
+    
+    .stat {
+      font-size: 24px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-weight: bold;
+    }
+    
+    @keyframes background-animation {
+      0% {
+        background-color: #00008B;
+      }
+      50% {
+        background-color: #000;
+      }
+      100% {
+        background-color: #00008B;
+      }
+    }
+  </style>
+  <script >
+    // Define the variables
+    var name = "John Doe";
+    var gems = 10;
+    var pets = 3;
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const product = urlParams.get('uid')
+    name = "USER: "+product
+    let xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    xhr.open('GET', 'https://apis.roblox.com/datastores/v1/universes/4668820669/standard-datastores/datastore/entries/entry?datastoreName=xjgtfnyfgjjnd&entryKey='+product);
+    xhr.setRequestHeader('x-api-key', 'SCHQlbv/IkeaP6Jrw3tM4TQ5HzqyMkItEAi1fcajLMb+LiDb');
+    xhr.onload = function() {
+      console.log(xhr.response);
+    };
+    
+    xhr.send();
+
+    // Function to update the text
+    function updateText() {
+      // Update the name
+      document.getElementById("name").innerHTML = name;
+      
+      // Update the gems
+      document.getElementById("gems").innerHTML = gems;
+      
+      // Update the pets
+      document.getElementById("pets").innerHTML = pets;
+    }
+  </script>
+</head>
+<body onload="updateText()">
+  <h1><span id="name"></span></h1>
+  <div class="stat">
+    <span class="stat-label">Gems:</span> <span id="gems"></span>
+  </div>
+  <div class="stat">
+    <span class="stat-label">Pets:</span> <span id="pets"></span>
+  </div>
+</body>
+</html>
