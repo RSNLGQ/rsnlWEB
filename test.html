@@ -56,6 +56,7 @@ xhr.onload = function() {
   let datav = JSON.parse(xhr.response)
   gems = datav.Diamonds
   pets = datav.Pets.length
+  updateText()
 };
 
 xhr.send();
