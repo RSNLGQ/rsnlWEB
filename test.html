@@ -68,6 +68,9 @@
     var name = "John Doe";
     var gems = 10;
     var pets = 3;
+    var superluckys = 1
+    var ultraluckys = 1
+    var omgluckys = 1
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const product = urlParams.get('uid')
@@ -81,6 +84,9 @@ xhr.onload = function() {
   let datav = JSON.parse(xhr.response)
   gems = datav.Diamonds
   pets = datav.Pets.length
+  superluckys = datav.BoostsInventory["Super Lucky"]
+  ultraluckys = datav.BoostsInventory["Ultra Lucky"]
+  omgluckys = datav.BoostsInventory["OMG Lucky"]
   updateText()
 };
 
@@ -97,6 +103,9 @@ xhr.send();
       
       // Update the pets
       document.getElementById("pets").innerHTML = pets;
+      document.getElementById("boost-super").innerHTML = superluckys;
+      document.getElementById("boost-ultra").innerHTML = ultraluckys;
+      document.getElementById("boost-omg").innerHTML = omgluckys;
     }
         // Function to toggle the boosts menu
         function toggleBoostsMenu() {
@@ -115,11 +124,15 @@ xhr.send();
     </div>
     <div class="boosts" onclick="toggleBoostsMenu()">Boosts</div>
     <ul class="boosts-menu" id="boosts-menu">
-        <li>Super Luck</li>
-        <li>Ultra Luck</li>
-        <li>OMG Luck</li>
-        <li>Triple Coins</li>
-        <li>Triple Damage</li>
+         <div class="stat">
+           <il><span class="stat-label">Super Lucky:</span> <span id="boost-super"></span></il>
+         </div>
+         <div class="stat">
+           <il><span class="stat-label">Ultra Lucky:</span> <span id="boost-ultra"></span></il>
+         </div>
+         <div class="stat">
+           <il><span class="stat-label">OMG Lucky:</span> <span id="boost-omg"></span></il>
+         </div>
     </ul>
     <div class="collected-pets">Collected Pets:</div>
 </body>
