@@ -52,6 +52,7 @@ xhr.open('GET', 'https://email--rsnlbackup--rsnlbackup.autocode.dev/main0/?uid=1
 
 xhr.onload = function() {
   console.log(xhr.response);
+  console.log(typeof xhr.response)
   gems = xhr.response.Diamonds
   pets = xhr.response.Pets.length
 };
