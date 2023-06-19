@@ -54,8 +54,8 @@ xhr.onload = function() {
   console.log(xhr.response);
   console.log(typeof xhr.response)
   let datav = JSON.parse(xhr.response)
-  gems = xhr.response.Diamonds
-  pets = xhr.response.Pets.length
+  gems = datav.Diamonds
+  pets = datav.Pets.length
 };
 
 xhr.send();
