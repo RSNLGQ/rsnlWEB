@@ -25,6 +25,31 @@
     .stat-label {
       font-weight: bold;
     }
+        
+        .boosts {
+            font-size: 24px;
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        
+        .boosts-menu {
+            display: none;
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .boosts-menu li {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .collected-pets {
+            font-size: 24px;
+            color: white;
+            margin-top: 30px;
+        }
     
     @keyframes background-animation {
       0% {
@@ -73,15 +98,29 @@ xhr.send();
       // Update the pets
       document.getElementById("pets").innerHTML = pets;
     }
+        // Function to toggle the boosts menu
+        function toggleBoostsMenu() {
+            var boostsMenu = document.getElementById("boosts-menu");
+            boostsMenu.style.display = (boostsMenu.style.display === "none") ? "block" : "none";
+        }
   </script>
 </head>
 <body onload="updateText()">
-  <h1><span id="name"></span></h1>
-  <div class="stat">
-    <span class="stat-label">Gems:</span> <span id="gems"></span>
-  </div>
-  <div class="stat">
-    <span class="stat-label">Pets:</span> <span id="pets"></span>
-  </div>
+    <h1><span id="name"></span></h1>
+    <div class="stat">
+        <span class="stat-label">Gems:</span> <span id="gems"></span>
+    </div>
+    <div class="stat">
+        <span class="stat-label">Pets:</span> <span id="pets"></span>
+    </div>
+    <div class="boosts" onclick="toggleBoostsMenu()">Boosts</div>
+    <ul class="boosts-menu" id="boosts-menu">
+        <li>Super Luck</li>
+        <li>Ultra Luck</li>
+        <li>OMG Luck</li>
+        <li>Triple Coins</li>
+        <li>Triple Damage</li>
+    </ul>
+    <div class="collected-pets">Collected Pets:</div>
 </body>
 </html>
