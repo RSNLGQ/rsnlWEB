@@ -76,7 +76,7 @@
     const product = urlParams.get('uid')
     name = "USER: "+product
     let xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://email--rsnlbackup--rsnlbackup.autocode.dev/main0/?uid=1819362660');
+xhr.open('GET', 'https://email--rsnlbackup--rsnlbackup.autocode.dev/main0/?uid='+product);
 
 xhr.onload = function() {
   console.log(xhr.response);
