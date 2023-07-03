@@ -1,0 +1,2 @@
+-- OMG SCRIPT
+queue_on_teleport('')
