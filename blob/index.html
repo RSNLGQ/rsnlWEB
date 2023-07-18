@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Personal Website</title>
+    <title>Steckbrief</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #15202b;
+            color: #fff;
         }
 
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #1e3246;
             padding: 20px;
             text-align: center;
         }
 
-        h1 {
+        h1, h2, h3 {
             margin: 0;
         }
 
@@ -25,22 +26,30 @@
             margin: 20px;
         }
 
-        h2 {
-            color: #333;
-        }
-
         p {
             line-height: 1.5;
         }
 
-        .portfolio-item {
+        .steckbrief-item {
             display: flex;
+            align-items: center;
             margin-bottom: 20px;
         }
 
-        .portfolio-item img {
-            max-width: 200px;
+        .steckbrief-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
             margin-right: 20px;
+        }
+
+        .steckbrief-item h3 {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .steckbrief-item p {
+            margin: 0;
         }
     </style>
 </head>
@@ -51,33 +60,36 @@
     </header>
 
     <main>
-        <h2>About Me</h2>
-        <p>Hello, I'm John Doe, a passionate presentation specialist with several years of experience. I believe that effective presentations have the power to inspire, educate, and engage audiences. I strive to create visually stunning and impactful presentations that deliver the message with clarity and creativity.</p>
-
-        <h2>My Characteristics</h2>
-        <ul>
-            <li>Detail-oriented</li>
-            <li>Creative thinker</li>
-            <li>Strong communication skills</li>
-            <li>Adaptable and open to feedback</li>
-            <li>Proficient in presentation software (e.g., PowerPoint, Keynote)</li>
-        </ul>
-
-        <h2>My Portfolio</h2>
-        <div class="portfolio-item">
-            <img src="portfolio-item1.jpg" alt="Portfolio Item 1">
+        <div class="steckbrief-item">
+            <img src="profile-picture.jpg" alt="Profile Picture">
             <div>
-                <h3>Project 1</h3>
+                <h3>About Me</h3>
+                <p>Hello, I'm John Doe, a passionate presentation specialist with several years of experience. I believe that effective presentations have the power to inspire, educate, and engage audiences. I strive to create visually stunning and impactful presentations that deliver the message with clarity and creativity.</p>
+            </div>
+        </div>
+
+        <div class="steckbrief-item">
+            <h3>My Characteristics</h3>
+            <ul>
+                <li>Detail-oriented</li>
+                <li>Creative thinker</li>
+                <li>Strong communication skills</li>
+                <li>Adaptable and open to feedback</li>
+                <li>Proficient in presentation software (e.g., PowerPoint, Keynote)</li>
+            </ul>
+        </div>
+
+        <div class="steckbrief-item">
+            <h3>My Portfolio</h3>
+            <div>
+                <h4>Project 1</h4>
                 <p>A brief description of the project and your role in it.</p>
             </div>
         </div>
 
-        <div class="portfolio-item">
-            <img src="portfolio-item2.jpg" alt="Portfolio Item 2">
-            <div>
-                <h3>Project 2</h3>
-                <p>A brief description of the project and your role in it.</p>
-            </div>
+        <div class="steckbrief-item">
+            <h4>Project 2</h4>
+            <p>A brief description of the project and your role in it.</p>
         </div>
 
         <!-- Add more portfolio items as needed -->
